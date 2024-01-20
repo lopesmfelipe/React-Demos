@@ -145,7 +145,7 @@ function getBook(id) {
 
 // Destructuring
 
-const book = getBook(2);
+const book = getBook(1);
 book;
 
 const { title, author, pages, publicationDate, genres, hasMovieAdaptation } =
@@ -153,13 +153,11 @@ const { title, author, pages, publicationDate, genres, hasMovieAdaptation } =
 
 console.log(title, author, genres);
 
-
 const [primaryGenre, sencondaryGenre, ...otherGenres] = genres;
 
 // const primaryGenre = genres[0];
 // const sencodaryGenre = genres[1];
- console.log(primaryGenre, sencondaryGenre, otherGenres);
-
+console.log(primaryGenre, sencondaryGenre, otherGenres);
 
 const newGenres = [...genres, "cyberpunk"];
 newGenres;
@@ -167,22 +165,32 @@ newGenres;
 const updatedBook = { ...book, publicationDate: "2001-12-19" };
 updatedBook;
 
-
 const getYear = (str) => str.split("-")[0];
 console.log(getYear(publicationDate));
 
-
-
-
-
 const summary = `my book ${title} has ${pages} pages,
- and was published in ${getYear(publicationDate)}, and it was written by ${author
-}. The book has ${hasMovieAdaptation ? "" : "not"} been adapted as a movie`;
+ and was published in ${getYear(
+   publicationDate
+ )}, and it was written by ${author}. The book has ${
+  hasMovieAdaptation ? "" : "not"
+} been adapted as a movie`;
 summary;
 
 const pagesRange = pages > 1000 ? "over a thousand" : "less than 1000";
 console.log(`This book has ${pagesRange} pages in total`);
 
+console.log(true && "some random string"); // because it's true, it checks the first value, and then the second
+console.log(false && "some random string"); //short circuit, not even look at the second value
+
+
+console.log(hasMovieAdaptation && "This book has a movie adaptation");
+
+
+console.log("Felip" && "say my name");
+console.log('' && "say my name");
+
+console.log(true || 'its false');
+console.log(false || 'its false');
 
 
 
