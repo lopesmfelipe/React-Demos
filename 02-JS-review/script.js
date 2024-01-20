@@ -145,7 +145,7 @@ function getBook(id) {
 
 // Destructuring
 
-const book = getBook(1);
+const book = getBook(2);
 book;
 
 const { title, author, pages, publicationDate, genres, hasMovieAdaptation } =
@@ -182,15 +182,22 @@ console.log(`This book has ${pagesRange} pages in total`);
 console.log(true && "some random string"); // because it's true, it checks the first value, and then the second
 console.log(false && "some random string"); //short circuit, not even look at the second value
 
-
 console.log(hasMovieAdaptation && "This book has a movie adaptation");
 
-
 console.log("Felip" && "say my name");
-console.log('' && "say my name");
+console.log("" && "say my name");
 
-console.log(true || 'its false'); // short circuit, not even look at the second value
-console.log(false || 'its false'); // when false, it checks the second value 
+console.log(true || "its false"); // short circuit, not even look at the second value
+console.log(false || "its false"); // when false, it checks the second value
 
+console.log(book.translations.spanish);
 
+const spanishTranslation = book.translations.spanish || "NOT TRANSLATED";
+spanishTranslation;
 
+console.log(book.reviews.librarything.reviewsCount);
+const countWrong = book.reviews.librarything.reviewsCount || "no data";
+countWrong;
+
+const count = book.reviews.librarything.reviewsCount ?? "no data"; // the nullish coalescing operator will only return the second value when the second value is null or undefined(so if it's 0 or a empty string('') it will appear)
+count;
