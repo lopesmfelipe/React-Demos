@@ -142,3 +142,49 @@ function getBooks() {
 function getBook(id) {
   return data.find((d) => d.id === id);
 }
+
+// Destructuring
+
+const book = getBook(2);
+book;
+
+const { title, author, pages, publicationDate, genres, hasMovieAdaptation } =
+  book;
+
+console.log(title, author, genres);
+
+
+const [primaryGenre, sencondaryGenre, ...otherGenres] = genres;
+
+// const primaryGenre = genres[0];
+// const sencodaryGenre = genres[1];
+ console.log(primaryGenre, sencondaryGenre, otherGenres);
+
+
+const newGenres = [...genres, "cyberpunk"];
+newGenres;
+
+const updatedBook = { ...book, publicationDate: "2001-12-19" };
+updatedBook;
+
+
+
+
+
+
+
+const summary = `my book ${title} has ${pages} pages,
+ and was published in ${publicationDate.split('-')[0]}, and it was written by ${author
+}. The book has ${hasMovieAdaptation ? "" : "not"} been adapted as a movie`;
+summary;
+
+const pagesRange = pages > 1000 ? "over a thousand" : "less than 1000";
+console.log(`This book has ${pagesRange} pages in total`);
+
+
+//function getYear(str) {
+//  return str.split("-")[0];
+//}
+
+
+const getYear = (srt) => str.split("-")[0];
