@@ -189,8 +189,8 @@ console.log(hasMovieAdaptation && "This book has a movie adaptation");
 console.log("Felip" && "say my name");
 console.log('' && "say my name");
 
-console.log(true || 'its false');
-console.log(false || 'its false');
+console.log(true || 'its false'); // short circuit, not even look at the second value
+console.log(false || 'its false'); // when false, it checks the second value 
 
 
 
