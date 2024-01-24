@@ -12,7 +12,7 @@ const data = [
       "novels",
       "literature",
     ],
-    hasMovieAdaptation: true,
+    hasMovieAdaptation: false,
     pages: 1216,
     translations: {
       spanish: "El señor de los anillos",
@@ -144,8 +144,8 @@ function getBook(id) {
 }
 
 // Destructuring
-
-const book = getBook(2);
+/*
+const book = getBook(3);
 book;
 
 const { title, author, pages, publicationDate, genres, hasMovieAdaptation } =
@@ -201,3 +201,66 @@ countWrong;
 
 const count = book.reviews.librarything.reviewsCount ?? "no data"; // the nullish coalescing operator will only return the second value when the second value is null or undefined(so if it's 0 or a empty string('') it will appear)
 count;
+
+function getTotalReviewCount(book) {
+  const goodreads = book.reviews?.goodreads?.reviewsCount;
+  const librarything = book.reviews?.librarything?.reviewsCount ?? 0;
+  librarything;
+  return goodreads + librarything; 
+}
+
+console.log(getTotalReviewCount(book));
+*/
+
+function getTotalReviewCount(book) {
+  const goodreads = book.reviews?.goodreads?.reviewsCount;
+  const librarything = book.reviews?.librarything?.reviewsCount ?? 0;
+  librarything;
+  return goodreads + librarything;
+}
+
+const books = getBooks();
+books;
+
+numbers = [1, 2, 3, 4, 5].map((el) => el - 1);
+console.log(numbers);
+
+const titles = books.map((book) => book.title);
+
+titles;
+
+const essentialDataBook = books.map((book) => ({
+  title: book.title,
+  author: book.author,
+  reviewsCount: getTotalReviewCount(book),
+}));
+
+essentialDataBook;
+
+const longBooks = books
+  .filter((book) => book.pages > 500)
+  .filter((book) => book.hasMovieAdaptation);
+longBooks;
+
+const fictionBooks = books
+  .filter((book) => book.genres.includes("fiction"))
+  .map((fictionBook) => fictionBook.title);
+
+fictionBooks;
+
+const allBooksPages = books.reduce((acc, book)=> acc + book.pages, 0);
+allBooksPages;
+
+
+const xi = [3, 9, 1, 5, 8, 6];
+const sorted = xi.slice().sort((a, b) => a - b);
+
+xi;
+sorted;
+
+
+
+
+
+const sortedByPages = books.slice().sort((a,b) => a.pages - b.pages);
+sortedByPages;
