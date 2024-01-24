@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 function App() {
-  return <h1> This website is built using React JS!</h1>;
+  return <h1> Why does Java sucks so much?</h1>;
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
