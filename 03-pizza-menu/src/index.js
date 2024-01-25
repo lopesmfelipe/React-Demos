@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import "./index.css";
 
 const pizzaData = [
   {
@@ -47,18 +48,42 @@ const pizzaData = [
 ];
 
 function App() {
-  const containerStyle = {
-    backgroundColor: "black",
-    color: "white",
-    padding: "20px",
-  };
+  return (
+    <div>
+      <Header />
+      <Menu />
+      <Footer />
+    </div>
+  );
+}
+
+function Header() {
+  return <h1> Fast react Pizza Co.</h1>;
+}
+
+function Menu() {
+  return (
+    <>
+      <h2>Our menu</h2>
+      <Pizza />
+      <Pizza />
+      <Pizza />;
+    </>
+  );
+}
+
+function Footer() {
+  const hour = new Date().getHours();
+  const openHour = 12;
+  const closeHour = 22;
+  const isOpen = hour >= openHour && hour <= closeHour;
+  console.log(isOpen);
 
   return (
-    <div style={containerStyle}>
-      <Pizza />
-      <Pizza />
-      <Pizza />
-    </div>
+    <>
+      <footer>{new Date().toLocaleTimeString()}. We're currently open</footer>
+      <h1> Hi {isOpen ? <p>Open</p> : <p>Closed</p>}</h1>
+    </>
   );
 }
 
