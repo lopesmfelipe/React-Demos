@@ -1,11 +1,10 @@
-function Skill(Props) {
+function Skill(props) {
   return (
     <div>
       <div>
         <button
           style={{
-
-            backgroundColor: Props.sColor,
+            backgroundColor: props.sColor,
             border: 0,
             borderRadius: "6px",
             display: "flex",
@@ -17,7 +16,7 @@ function Skill(Props) {
             paddingRight: "10px"
           }}
         >
-          {Props.skillName}
+          {props.skillName}{props.emoji}
         </button>
       </div>
     </div>

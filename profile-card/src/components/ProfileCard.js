@@ -16,11 +16,11 @@ function ProfileCard() {
           </p>
         </div>
         <div className="skill-container">
-          <Skill skillName="JavaScript" sColor="yellow" />
-          <Skill skillName="Node" sColor="pink" />
-          <Skill skillName="React" sColor="bluelight" />
-          <Skill skillName="HTML + CSS" sColor="purple" />
-          <Skill skillName="Git and GitHub" sColor="red" />
+          <Skill skillName="JavaScript" sColor="yellow" emoji="🤘"/>
+          <Skill skillName="Node" sColor="pink" emoji="📈"/>
+          <Skill skillName="React" sColor="bluelight" emoji="⚛️"/>
+          <Skill skillName="HTML + CSS" sColor="purple" emoji="😎" />
+          <Skill skillName="Git and GitHub" sColor="red" emoji="🤑"/>
         </div>
       </div>
     </div>
