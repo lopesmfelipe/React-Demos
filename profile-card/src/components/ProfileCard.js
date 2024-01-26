@@ -1,4 +1,4 @@
-import photo from "../images/profile.jpg";
+import photo from "../images/tobi.jpg";
 import "../styles/styles.css";
 import Skill from "./Skill";
 
