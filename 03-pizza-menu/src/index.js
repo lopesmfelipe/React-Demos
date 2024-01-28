@@ -70,7 +70,6 @@ function Header() {
 
 function Menu() {
   const pizzas = pizzaData;
-  //const pizzas = [];
   const numPizzas = pizzas.length;
 
   return (
@@ -83,26 +82,17 @@ function Menu() {
             <Pizza pizzaObj={pizza} key={pizza.name} />
           ))}
         </ul>
-      ) : <h1> Sorry but we ran out of pizza. Please come back later :)</h1>}
-
-      {/*<Pizza
-        name="Pizza Spinaci"
-        ingredients="Tomato, mozarella, spinach, and ricotta cheese"
-        photoName="pizzas/spinaci.jpg"
-        price={10}
-      />
-      <Pizza
-        name="Pizza Funghi"
-        ingredients="Tomato, Mushrooms"
-        price={20}
-        photoName="pizzas/funghi.jpg"
-  />*/}
+      ) : (
+        <h1> Sorry but we ran out of pizza. Please come back later :)</h1>
+      )}
     </main>
   );
 }
 
 function Pizza(props) {
   console.log(props);
+
+  if (props.pizzaObj.soldOut) return "";
 
   return (
     <li className="pizza">
@@ -118,24 +108,33 @@ function Pizza(props) {
 
 function Footer() {
   const hour = new Date().getHours();
-  const openHour = 10;
+  const openHour = 9;
   const closeHour = 22;
   const isOpen = hour >= openHour && hour <= closeHour;
   console.log(isOpen);
 
   return (
-    <>
-      <footer className="footer">
-        {isOpen ? (
-          <div className="order">
-            <p>
-              We're open until {closeHour}:00. Come visit us or order online
-            </p>
-            <button className="btn"> Order </button>
-          </div>
-        ) : <p> We will be happy to welcome you between {openHour}:00 and {closeHour}:00. </p>}
-      </footer>
-    </>
+    <footer className="footer">
+      {isOpen ? (
+        <Order closeHour={closeHour} />
+      ) : (
+        <p>
+          We will be happy to welcome you between {openHour}:00 and {closeHour}
+          :00.
+        </p>
+      )}
+    </footer>
+  );
+}
+
+function Order(props) {
+  return (
+    <div className="order">
+      <p>
+        We're open until {props.closeHour}:00. Come visit us or order online
+      </p>
+      <button className="btn"> Order </button>
+    </div>
   );
 }
 
