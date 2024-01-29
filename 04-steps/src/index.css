@@ -13,6 +13,7 @@ const messages = [
 body {
   font-family: sans-serif;
   color: #333;
+  background-color: rgb(37, 32, 77);
 }
 
 .steps {
