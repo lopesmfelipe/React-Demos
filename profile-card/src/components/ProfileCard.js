@@ -1,6 +1,6 @@
 import photo from "../images/tobi.jpg";
 import "../styles/styles.css";
-import Skill from "./Skill";
+import SkillList from "./Skill";
 
 const skills = [
   {
@@ -45,7 +45,7 @@ function ProfileCard() {
         </div>
         <div className="skill-container">
           {skills.map((skill) => (
-            <Skill skill={skill} />
+            <SkillList skill={skill} />
           ))}
         </div>
       </div>

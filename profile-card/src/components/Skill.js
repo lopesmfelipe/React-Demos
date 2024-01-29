@@ -1,4 +1,4 @@
-function Skill({ skill }) {
+function SkillList({ skill }) {
   const myStyle = {
     backgroundColor: skill.color,
     border: 0,
@@ -13,15 +13,13 @@ function Skill({ skill }) {
   };
 
   return (
-    <div>
       <div>
         <button style={myStyle}>
           {skill.skill}
           {skill.level === "advanced" ? "💪" : skill.level === "intermediate" ? "👍" : "👶"}
         </button>
       </div>
-    </div>
   );
 }
 
-export default Skill;
+export default SkillList;
