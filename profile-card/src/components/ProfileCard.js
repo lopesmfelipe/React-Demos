@@ -2,6 +2,34 @@ import photo from "../images/tobi.jpg";
 import "../styles/styles.css";
 import Skill from "./Skill";
 
+const skills = [
+  {
+    skill: "JavaScript",
+    level: "intermediate",
+    color: "#FF3B00"
+  },
+  {
+    skill: "HTML + CSS",
+    level: "advanced",
+    color: "#2662EA"
+  },
+  {
+    skill: "Node",
+    level: "beginner",
+    color: "#C3DCAF"
+  },
+  {
+    skill: "React",
+    level: "advanced",
+    color: "#60DAFB"
+  },
+  {
+    skill: "HTML + CSS",
+    level: "advanced",
+    color: "#E84F33"
+  }
+];
+
 function ProfileCard() {
   return (
     <div className="ProfileCard">
@@ -16,11 +44,9 @@ function ProfileCard() {
           </p>
         </div>
         <div className="skill-container">
-          <Skill skillName="JavaScript" sColor="yellow" emoji="🤘"/>
-          <Skill skillName="Node" sColor="pink" emoji="📈"/>
-          <Skill skillName="React" sColor="bluelight" emoji="⚛️"/>
-          <Skill skillName="HTML + CSS" sColor="purple" emoji="😎" />
-          <Skill skillName="Git and GitHub" sColor="red" emoji="🤑"/>
+          {skills.map((skill) => (
+            <Skill skill={skill} />
+          ))}
         </div>
       </div>
     </div>

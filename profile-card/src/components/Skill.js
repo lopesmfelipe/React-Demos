@@ -1,22 +1,23 @@
-function Skill(props) {
+function Skill({ skill }) {
+  const myStyle = {
+    backgroundColor: skill.color,
+    border: 0,
+    borderRadius: "6px",
+    display: "flex",
+    padding: "4px",
+    margin: "4px",
+    color: "rgb(9, 9, 9)",
+    fontWeight: "bold",
+    paddingLeft: "10px",
+    paddingRight: "10px",
+  };
+
   return (
     <div>
       <div>
-        <button
-          style={{
-            backgroundColor: props.sColor,
-            border: 0,
-            borderRadius: "6px",
-            display: "flex",
-            padding: "4px",
-            margin: "4px",
-            color: "rgb(9, 9, 9)",
-            fontWeight: "bold",
-            paddingLeft: "10px",
-            paddingRight: "10px"
-          }}
-        >
-          {props.skillName}{props.emoji}
+        <button style={myStyle}>
+          {skill.skill}
+          {skill.level === "advanced" ? "💪" : skill.level === "intermediate" ? "👍" : "👶"}
         </button>
       </div>
     </div>
