@@ -15,11 +15,15 @@ function App() {
   }
 
   function handlePrevious() {
-    setStep(step > 1 ? step - 1 : step);
+    //setStep(step > 1 ? step - 1 : step);
+    if (step > 1) setStep((s) => s - 1 );
   }
 
   function handleNext() {
-    setStep(step < 3 ? step + 1 : step);
+    //setStep(step < 3 ? step + 1 : step);
+    if (step < 3) {
+      setStep((s) => s + 1);
+    }
   }
 
   return (
