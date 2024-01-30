@@ -7,6 +7,16 @@ const messages = [
 ];
 
 function App() {
+  return (
+    <>
+      <Steps />
+      <Steps />
+      <Steps />
+    </>
+  );
+}
+
+function Steps() {
   const [step, setStep] = useState(1);
   const [isOpen, setIsOpen] = useState(true);
 
@@ -16,7 +26,7 @@ function App() {
 
   function handlePrevious() {
     //setStep(step > 1 ? step - 1 : step);
-    if (step > 1) setStep((s) => s - 1 );
+    if (step > 1) setStep((s) => s - 1);
   }
 
   function handleNext() {
@@ -27,8 +37,8 @@ function App() {
   }
 
   return (
-    <>
-      <button className="close" onClick={() => setIsOpen(!isOpen)}>
+    <div>
+      <button className="close" onClick={() => setIsOpen((isOp) => !isOp)}>
         &times;
       </button>
       {isOpen && (
@@ -62,21 +72,10 @@ function App() {
             >
               Next
             </button>
-
-            <button
-              className="close"
-              style={{
-                backgroundColor: "#7950f2",
-                color: "#fff",
-              }}
-              onClick={() => setIsOpen(!isOpen)}
-            >
-              &times;
-            </button>
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }
 
