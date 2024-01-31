@@ -72,7 +72,7 @@ function Steps() {
             >
               Next
             </button>
-          </div>
+/;          </div>
         </div>
       )}
     </div>
