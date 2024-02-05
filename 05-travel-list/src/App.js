@@ -22,11 +22,20 @@ function Logo() {
 }
 
 function Form() {
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
   const [description, setDescription] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
+    
+    if (!description) return; 
+
+    const newItem = {description, quantity, packed: false,
+    id: Date.now() };
+    console.log(newItem);
+  
+    setDescription("");
+    setQuantity(1); 
   }
 
   return (
