@@ -20,10 +20,10 @@ function App() {
     { 
       id: 2341,
       question: "How to give components memory",
-      answer: "With state" },
+      answer: "With useState hook" },
     {
       id: 9844,
-      question: "What's hte name of the syntax we use to describe a UI in React",
+      question: "What's the name of the syntax we use to describe a UI in React",
       answer: "JSX",
     },
     {
@@ -43,7 +43,7 @@ function App() {
 
     return (
       <div
-        className="card"
+        className={turned ? "cardSelected" : "card"}
         onClick={() => setTurned(!turned)}
         style={cardStyle}
       >

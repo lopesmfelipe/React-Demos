@@ -1,4 +1,7 @@
 body {
   background-color: rgb(32, 26, 67);
   color: white;
+  font-family: monospace;
+  font-size: 16px;
 }
+
