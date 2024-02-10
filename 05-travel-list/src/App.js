@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+// App
 export default function App() {
   const [items, setItems] = useState([]);
 
@@ -38,6 +39,7 @@ function Logo() {
   return <h1> 🏝️ Far Away 💼 </h1>;
 }
 
+// Form
 function Form({ onAddItems }) {
   const [quantity, setQuantity] = useState(1);
   const [description, setDescription] = useState("");
@@ -80,6 +82,7 @@ function Form({ onAddItems }) {
   );
 }
 
+// PackingList
 function PackingList({ items, onDeleteItem, onToggleItem }) {
   return (
     <div className="list">
@@ -97,6 +100,7 @@ function PackingList({ items, onDeleteItem, onToggleItem }) {
   );
 }
 
+// Item
 function Item({ item, onDeleteItem, onToggleItem }) {
   return (
     <li>
@@ -114,6 +118,7 @@ function Item({ item, onDeleteItem, onToggleItem }) {
   );
 }
 
+//Stats.js
 function Stats() {
   return (
     <footer>
