@@ -10,8 +10,18 @@ export default function App() {
   return (
     <>
       <Steps />
-      {/*<Steps />*/}
-      {/*<Steps />*/}
+      <StepMessage step={4}>
+        <p>Some random text</p>
+        <p>🏯</p>
+      </StepMessage>
+      <StepMessage step={5}>
+        <p>Some random text</p>
+        <p>🗾</p>
+      </StepMessage>
+      <StepMessage step={6}>
+        <p>Some random text</p>
+        <p>🎋</p>
+      </StepMessage>
     </>
   );
 }
@@ -49,20 +59,38 @@ function Steps() {
             <div className={step >= 3 ? "active" : ""}> 3 </div>
           </div>
 
-          <p className="message">
-            Step {step}: {messages[step - 1]}
-          </p>
+          <StepMessage step={step}>
+            {messages[step - 1]}
+            <div className="buttons">
+              <Button
+                bgColor="red"
+                textColor="white"
+                onClick={() => alert(`Learn how to ${messages[step - 1]}`)}
+              >
+                Learn how
+              </Button>
+            </div>
+          </StepMessage>
 
           <div className="buttons">
             <Button textColor="#fff" bgColor="#7950f2" onClick={handlePrevious}>
               <span>👈</span> Previous
             </Button>
             <Button textColor="#fff" bgColor="#7950f2" onClick={handleNext}>
-              Next <span>👉</span>
+              Next <span>👉</span> <span>🤓</span>
             </Button>
           </div>
         </div>
       )}
+    </div>
+  );
+}
+
+function StepMessage({ step, children }) {
+  return (
+    <div className="message">
+      <h3>Step {step}:</h3>
+      {children}
     </div>
   );
 }
@@ -76,7 +104,6 @@ function Button({ textColor, bgColor, onClick, children }) {
       }}
       onClick={onClick}
     >
-      <span>{children}</span>
       {children}
     </button>
   );
