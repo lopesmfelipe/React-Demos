@@ -20,6 +20,7 @@ html {
 body {
   height: 100vh;
   color: #495057;
+  background-color: #e03131;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -167,4 +168,3 @@ form h2 {
   letter-spacing: -0.5px;
   margin-bottom: 1.6rem;
 }
-
