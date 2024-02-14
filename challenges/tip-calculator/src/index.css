@@ -1,4 +1,10 @@
 body {
-    background-color: rgb(25, 22, 22);
-    color: white;
+  background-color: rgb(25, 22, 22);
+  color: white;
+  font-size: 25px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+p {
+  display: inline;
 }
