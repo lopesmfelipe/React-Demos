@@ -1,4 +1,5 @@
 import { useState } from "react";
+const x = 20;
 
 const initialFriends = [
   {
