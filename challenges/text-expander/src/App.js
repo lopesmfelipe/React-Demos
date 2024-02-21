@@ -45,28 +45,29 @@ function TextExpander({
   className,
 }) {
   const [isExpanded, setIsExpanded] = useState(expanded);
-  const [wordsShowed, setWordsShowed] = useState(collapsedNumWords);
 
   const toggleExpanded = () => {
     setIsExpanded(!isExpanded);
   };
 
+  const showText = isExpanded
+    ? children
+    : children.split(" ").slice(0, collapsedNumWords).join(" ") + "...";
+
+  const showButton = isExpanded ? (
+    <button style={{ color: buttonColor }} onClick={toggleExpanded}>
+      {collapseButtonText}
+    </button>
+  ) : (
+    <button style={{ color: buttonColor }} onClick={toggleExpanded}>
+      {expandButtonText}
+    </button>
+  );
+
   return (
     <div className={className}>
-      <p>
-        {isExpanded
-          ? children
-          : `${children.split(" ").slice(0, wordsShowed).join(" ")}...`}
-      </p>
-      {isExpanded ? (
-        <button style={{ color: buttonColor }} onClick={toggleExpanded}>
-          {collapseButtonText}
-        </button>
-      ) : (
-        <button style={{ color: buttonColor }} onClick={toggleExpanded}>
-          {expandButtonText}
-        </button>
-      )}
+      <p>{showText}</p>
+      {showButton}
     </div>
   );
 }
