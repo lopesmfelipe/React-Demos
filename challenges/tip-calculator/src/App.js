@@ -21,7 +21,7 @@ export default function App() {
     <div>
       <BillInput bill={bill} onBillChange={setBill} />
       <LikePercentage percentage={percentage1} onSelect={setPercentage1}>
-        How did you like the service
+        How did you like the service 
       </LikePercentage>
       <LikePercentage percentage={percentage2} onSelect={setPercentage2}>
         How did your friend like the service?

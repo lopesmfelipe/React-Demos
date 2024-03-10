@@ -50,9 +50,16 @@ const tempWatchedData = [
 const average = (arr) =>
   arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
 
+const KEY = "8b1e9c46";
+
 export default function App() {
-  const [movies, setMovies] = useState(tempMovieData);
-  const [watched, setWatched] = useState(tempWatchedData);
+  const [movies, setMovies] = useState([]);
+  const [watched, setWatched] = useState([]);
+
+  fetch(`http://www.omdbapi.com/?apikey=${KEY}&s=ex-machina`)
+  .then((res) => res.json()
+  .then((data) => console.log(data.Search)));
+
 
   return (
     <>
@@ -61,14 +68,14 @@ export default function App() {
         <NumResults movies={movies} />
       </NavBar>
       <Main>
-         <Box>
+        <Box>
           <MovieList movies={movies} />
         </Box>
 
         <Box>
           <WatchedSummary watched={watched} />
           <WatchedMoviesList watched={watched} />
-        </Box> 
+        </Box>
       </Main>
     </>
   );
