@@ -58,7 +58,7 @@ export default function App() {
   const [watched, setWatched] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
-  const tempQuery = "alien";
+  const tempQuery = "ex-machina";
 
   /*useEffect(function () {
     console.log("After initial render");
