@@ -58,7 +58,7 @@ export default function App() {
   const [watched, setWatched] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
-  const tempQuery = "alien";
+  const [selectedId, setSelectedId] = useState(null);
 
   /*useEffect(function () {
     console.log("After initial render");
@@ -76,6 +76,10 @@ export default function App() {
   ); 
 
   console.log("During render"); */
+
+    function handleSelectMovie(id) {
+      setSelectedId(id)
+    }
 
   useEffect(
     function () {
@@ -103,10 +107,10 @@ export default function App() {
         }
       }
 
-      if(query.length < 3) {
+      if (query.length < 3) {
         setMovies([]);
         setError("");
-        return
+        return;
       }
 
       fetchMovies();
@@ -129,8 +133,14 @@ export default function App() {
         </Box>
 
         <Box>
-          <WatchedSummary watched={watched} />
-          <WatchedMoviesList watched={watched} />
+          {selectedId ? (
+            <MovieDetails selectedId={selectedId} />
+          ) : (
+            <>
+              <WatchedSummary watched={watched} />
+              <WatchedMoviesList watched={watched} />
+            </>
+          )}
         </Box>
       </Main>
     </>
@@ -228,6 +238,10 @@ function WatchedBox() {
 }
 */
 
+function MovieDetails({ selectedId }) {
+  return <div className="details">{selectedId}</div>;
+}
+
 function MovieList({ movies }) {
   return (
     <ul className="list">
@@ -240,7 +254,7 @@ function MovieList({ movies }) {
 
 function Movie({ movie }) {
   return (
-    <li>
+    <li onClick={}>
       <img src={movie.Poster} alt={`${movie.Title} poster`} />
       <h3>{movie.Title}</h3>
       <div>
