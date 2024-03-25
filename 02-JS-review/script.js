@@ -15,7 +15,7 @@ const data = [
     hasMovieAdaptation: false,
     pages: 1216,
     translations: {
-      spanish: "El señor de los anillos",
+      spanish: "El señor de los anilllos",
       chinese: "魔戒",
       french: "Le Seigneur des anneaux",
     },
